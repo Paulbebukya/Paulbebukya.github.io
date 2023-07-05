@@ -1,0 +1,470 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+boby{
+    position: relative;
+}
+.bi-circle{
+    @apply animate-ping
+}
+.circle{
+    position: absolute;
+    left: 20%;
+    top: 10%;
+}
+
+.circle1{
+    position: absolute;
+    right: 28%;
+    top: 37%;
+}
+.circle2{
+    position: absolute;
+    bottom: 20%;
+    right: 50%;
+}
+
+.circle3{
+    position: absolute;
+    top: 50%;
+    right: 50%;
+}
+
+.circle4{
+    position: absolute;
+    left: 20%;
+    top: 55%;
+}
+
+.circle5{
+    position: absolute;
+    left: 49%;
+    top: 20%;
+}
+.btn{
+    position: relative;
+    @apply rounded-full py-2 px-3 uppercase text-xs  font-bold cursor-pointer tracking-wider
+}
+ 
+.btn::before{
+    position: absolute;
+    content: '';
+    height: 100%;
+    @apply rounded-full;
+    background: rgb(255, 255, 255);
+    width: 0%;
+    top: 0;
+    left: 0;
+    transition: all 0.3s linear;
+}
+.btn:hover{
+    color: #0c1022;
+}
+.btn:hover::before{
+    width: 100%;
+    z-index: -1;
+}
+
+.btn_two{
+    position: relative;
+}
+
+.btn_two::before{
+    position: absolute;
+    content: '';
+    height: 100%;
+    background: #45f3ff;
+    width: 0%;
+    top: 0;
+    right: 0;
+    transition: all 0.3s linear;
+}
+
+.btn_two:hover::before{
+    width: 100%;
+    z-index: -1;
+}
+.btn_two:hover{
+    color: #0c1022;
+}
+
+.body_bg{
+    /* background-image: url('../src/images/background/bg.jpg'); */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment:fixed;
+    background: #0c1022;
+}
+.main_bg{
+    backdrop-filter: blur(5px);
+    background: rgba(255, 255, 255, 0.062);
+}
+
+.lien a{
+    position: relative;
+    z-index: 1;
+    animation: slideTop 1s ease forwards;
+    animation-delay: .7;
+    margin: 5px;
+    @apply flex h-8 w-8 justify-center items-center text-white font-bold rounded-full bg-gray-600
+
+}
+
+.lien a::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #000000;
+    border-radius: 50%;
+    transform: scale(.88);
+    z-index: -1;
+    transition: .5s ease;
+}
+.bx{
+    font-size: 20px;
+}
+.lien a:hover::after{
+    transform: scale(.0);
+}
+
+.image{
+    opacity: 1;
+     animation: zoomIn 1s ease forwards, floatImage 4s ease-in-out infinite; 
+     animation-delay: 2.1s ,3.2s ; 
+}
+.home_img{
+    position: relative;
+}
+.home_img::before{
+    content:'';
+    position: absolute;
+     width: 100%;
+     height: 100%;
+     top: 0;
+     left: 0;
+     right: -200px;
+     z-index: -1;
+     background:  url('../../images/img/colored-smoke.png');
+     background-size: cover;
+}
+/* about */
+#about{
+    position: relative;
+    border-radius: 15px  30px ;
+    backdrop-filter: blur(5px);
+    overflow: hidden;
+  @apply p-1; 
+}
+#about .content{
+  background: #0c1022;
+  @apply md:p-8 p-4 bottom-2 border-black rounded-xl; 
+
+}
+
+
+#about::before{
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 400px;
+    top: -25%;
+    left: -25%;
+    background: linear-gradient(
+    0deg, transparent, transparent , #45f3ff,#45f3ff,#45f3ff
+    );
+    transform-origin: bottom right;
+    z-index: -1;
+    animation: rotation 6s linear infinite;
+    
+}
+
+#about::after{
+    content: '';
+    position: absolute;
+    width: 350px;
+    height: 400px;
+    bottom: -25%;
+    right: -25%;
+    background: linear-gradient(
+    0deg, transparent, transparent , #ff4545,#ff4545,#ff4545
+    );
+    transform-origin: top left;
+    z-index: -1;
+    animation: rotation 6s linear infinite;
+    animation-delay: -3s;
+}
+
+.title,  .title_right{
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.title::after{
+    content: '';
+    position: absolute;
+    @apply bg-red-400  md:w-28 w-16;
+    bottom: 0;
+    margin-left: 10px;
+    height: 5px;  
+    border-radius: 20px;
+}
+
+ .title_right::after{
+    content: '';
+    position: absolute;
+    @apply bg-red-400  md:w-28 w-16;
+    bottom: -10px;
+    right: 25%;
+    margin-left: 10px;
+    height: 5px;  
+    border-radius: 20px;
+}
+
+
+ h2{
+    color: #45f3ff;
+}
+
+.icone{
+    color:#15cce4;
+    font-size: 1.4rem;
+    text-shadow: 1px 1px 1px white;
+    animation: slideRight 4s ease-in-out infinite; 
+}
+#about .stills  li{
+    position: relative;
+}
+
+#about .stills  li .bar_85{
+    display: block;
+    position: relative;
+    @apply md:w-full w-80 rounded-full;
+    height: 5px;
+    margin: 5px 0;
+    background: transparent;
+    overflow: hidden;
+    background: gray;
+}
+#about .stills  .bar_85::before{
+    position: absolute;
+    content: '';
+    @apply md:w-64 w-64 rounded-r-full; 
+    height: 5px;
+    background: #45f3ffa6;
+}
+
+#about .stills  li .bar_80{
+    display: block;
+    position: relative;
+    @apply md:w-full w-80 rounded-full;
+    height: 5px;
+    margin: 5px 0;
+    background: transparent;
+    overflow: hidden;
+    background: gray;
+}
+#about .stills  .bar_80::before{
+    position: absolute;
+    content: '';
+    @apply md:w-60 w-60 rounded-r-full; 
+    height: 5px;
+    background: #45f3ffa6;
+}
+
+#about .stills  li .bar_70{
+    display: block;
+    position: relative;
+    @apply md:w-80 w-80 rounded-full;
+    height: 5px;
+    margin: 5px 0;
+    background: transparent;
+    overflow: hidden;
+    background: gray;
+}
+#about .stills  .bar_70::before{
+    position: absolute;
+    content: '';
+    @apply md:w-52 w-52 rounded-r-full; 
+    height: 5px;
+    @apply rounded-r-full;
+    background: #45f3ffa6;
+}
+
+#about .stills  li .bar_60{
+    display: block;
+    position: relative;
+    @apply md:w-80 w-80 rounded-full;
+    height: 5px;
+    margin: 5px 0;
+    background: transparent;
+    overflow: hidden;
+    background: gray;
+}
+#about .stills  .bar_60::before{
+    position: absolute;
+    content: '';
+    @apply md:w-44 w-44 rounded-r-full; 
+    height: 5px;
+    @apply rounded-r-full;
+    background: #ff4545c0;
+}
+
+
+#about .stills  li .bar_65{
+    display: block;
+    position: relative;
+    @apply md:w-80 w-80 rounded-full;
+    height: 5px;
+    margin: 5px 0;
+    background: transparent;
+    overflow: hidden;
+    background: gray;
+}
+#about .stills  .bar_65::before{
+    position: absolute;
+    content: '';
+    width: 180px;
+    height: 5px;
+    @apply rounded-r-full;
+    background: #ff4545c0;
+}
+
+
+#about .stills  li .bar_50{
+    display: block;
+    position: relative;
+    @apply md:w-80 w-80 rounded-full;
+    height: 5px;
+    margin: 5px 0;
+    background: transparent;
+    overflow: hidden;
+    background: gray;
+}
+#about .stills  .bar_50::before{
+    position: absolute;
+    content: '';
+    height: 5px;
+    @apply rounded-r-full md:w-40 w-40;
+    background: #ff4545c0;
+}
+
+/* contact */
+
+.input{
+    @apply bg-gray-500 p-2 font-medium text-white
+    outline-cyan-400 border-none border-0
+}
+
+/* animation */
+
+@keyframes slideRight {
+     
+    
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+     100% {
+        opacity: 1;
+        transform: translateX(0);
+     }
+}
+
+
+@keyframes slideLeft {
+     
+    
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+     100% {
+        opacity: 1;
+        transform: translateX(0);
+     }
+}
+
+@keyframes slideTop {
+     
+    
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+     100% {
+        opacity: 1;
+        transform: translateY(0);
+     }
+}
+
+@keyframes zoomIn{
+    0%{
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    100%{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes floatImage{
+    0%{
+        transform: translateY(0);
+    }
+
+    50%{
+        transform: translateY(-24px);
+    }
+
+    100%{
+        transform: translateY(0);
+    }
+    
+}
+
+@keyframes rotate {
+    0%{
+        transform: rotate(35deg);
+    }
+    50%{
+        transform: rotate(90deg);
+        background: #0000004f;
+    }
+    100%{
+        transform: rotate(35deg);
+
+    }
+
+}
+
+@keyframes rotation {
+    0%{
+        transform:  rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+
+.animation_text1{
+    animation: slideRight 1s ease forwards;
+    animation-delay: .7;
+}
+
+.animation_text2{
+    animation: slideRight 2s ease forwards;
+    animation-delay: .7;
+
+}
+
+.animation_left{
+    animation: slideLeft 1s ease forwards;
+    animation-delay: .7;
+}
